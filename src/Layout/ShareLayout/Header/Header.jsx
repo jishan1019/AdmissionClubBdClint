@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -6,7 +7,7 @@ const Header = () => {
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <a className="btn btn-ghost normal-case text-xl hidden md:block">
-            daisyUI
+            Admission Club Bd
           </a>
           <div className="dropdown md:hidden">
             <label tabIndex={0} className="btn btn-ghost btn-circle">
@@ -29,17 +30,23 @@ const Header = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
-              <li>
-                <a>Home</a>
+              <li className="font-bold">
+                <a>Admission Club Bd</a>
               </li>
               <li>
-                <a>Colleges</a>
+                <Link to="/">Home</Link>
               </li>
               <li>
-                <a>Admission</a>
+                <Link to="/collage">Colleges</Link>
               </li>
               <li>
-                <a>My Collage</a>
+                <Link to="/admission">Admission</Link>
+              </li>
+              <li>
+                <Link to="/myCollage">My Collage</Link>
+              </li>
+              <li>
+                <Link to="/login">Login</Link>
               </li>
             </ul>
           </div>
@@ -47,16 +54,19 @@ const Header = () => {
         <div className="navbar-center hidden md:block">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a>Colleges</a>
+              <Link to="/collage">Colleges</Link>
             </li>
             <li>
-              <a>Admission</a>
+              <Link to="/admission">Admission</Link>
             </li>
             <li>
-              <a>My Collage</a>
+              <Link to="/myCollage">My Collage</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>

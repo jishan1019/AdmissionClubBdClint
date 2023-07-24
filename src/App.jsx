@@ -10,9 +10,11 @@ function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="md:ml-6 mr-6">
+    <div className="md:ml-6 md:mr-6">
       <Header />
-      <Outlet />
+      <div className="min-h-[calc(100vh-120px)]">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );
