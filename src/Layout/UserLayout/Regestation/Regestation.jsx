@@ -36,7 +36,7 @@ const Regestation = () => {
           image: data?.photoURL,
         };
 
-        fetch("http://localhost:4000/users", {
+        fetch("https://admission-club-bd-server.vercel.app/users", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -74,7 +74,7 @@ const Regestation = () => {
         image: user?.photoURL,
       };
 
-      fetch("http://localhost:4000/users", {
+      fetch("https://admission-club-bd-server.vercel.app/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

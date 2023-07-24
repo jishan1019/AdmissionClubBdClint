@@ -6,7 +6,9 @@ const MyCollage = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/myCollage/${user?.email}`)
+    fetch(
+      `https://admission-club-bd-server.vercel.app/myCollage/${user?.email}`
+    )
       .then((res) => res.json())
       .then((info) => {
         setData(info);

@@ -6,7 +6,7 @@ const Profile = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:4000/users/${user?.email}`)
+    fetch(`https://admission-club-bd-server.vercel.app/users/${user?.email}`)
       .then((res) => res.json())
       .then((userData) => {
         console.log(userData);

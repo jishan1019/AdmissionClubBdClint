@@ -13,7 +13,7 @@ const Admission = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("http://localhost:4000/myAdmission", {
+    fetch("https://admission-club-bd-server.vercel.app/myAdmission", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
