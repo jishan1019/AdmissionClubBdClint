@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../SecurityLayout/AuthProvider/AuthProvider";
 
 const Header = () => {
+  const { user, logout } = useContext(AuthContext);
+  console.log(user?.photoURL);
+
   return (
     <>
       <div className="navbar bg-base-100">
@@ -65,9 +69,17 @@ const Header = () => {
             <li>
               <Link to="/myCollage">My Collage</Link>
             </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
+            {user ? (
+              <li>
+                <Link to="/" onClick={logout}>
+                  Logout
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Link to="/login">Login</Link>
+              </li>
+            )}
           </ul>
         </div>
         <div className="navbar-end">
@@ -80,8 +92,12 @@ const Header = () => {
           </div>
           <div className="rounded-full">
             <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpksu6S3Rc6c62Ce5RmC5DGRK9Bu3Q4Nal0A&usqp=CAU"
-              className="h-12"
+              src={
+                user
+                  ? user.photoURL
+                  : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpksu6S3Rc6c62Ce5RmC5DGRK9Bu3Q4Nal0A&usqp=CAU"
+              }
+              className="h-12 rounded-full"
               alt=""
             />
           </div>
