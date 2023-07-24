@@ -30,11 +30,20 @@ const router = createBrowserRouter([
       },
       {
         path: "/admission",
-        element: <Admission />,
+        element: (
+          <PrivateRoute>
+            <Admission />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/myCollage",
-        element: <MyCollage />,
+        element: (
+          <PrivateRoute>
+            {" "}
+            <MyCollage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
