@@ -185,6 +185,24 @@ const Regestation = () => {
               />
             </label>
 
+            <label htmlFor="">
+              University <br />
+              <input
+                className="bg-[#F9F9F9] w-full p-3 mt-1 mb-4"
+                placeholder="Enter University Name"
+                {...register("university", { required: true })}
+              />
+            </label>
+
+            <label htmlFor="">
+              Adress <br />
+              <input
+                className="bg-[#F9F9F9] w-full p-3 mt-1 mb-4"
+                placeholder="Enter Your Adress"
+                {...register("adress", { required: true })}
+              />
+            </label>
+
             {errors.exampleRequired && <span>This field is required</span>}
             <p>
               Alrady have account

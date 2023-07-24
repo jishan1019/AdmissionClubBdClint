@@ -11,6 +11,8 @@ import MyCollage from "./Layout/MyCollageLayout/MyCollage/MyCollage.jsx";
 import Login from "./Layout/UserLayout/Login/Login.jsx";
 import Regestation from "./Layout/UserLayout/Regestation/Regestation.jsx";
 import AuthProvider from "./Layout/SecurityLayout/AuthProvider/AuthProvider.jsx";
+import Profile from "./Layout/UserLayout/Profile/Profile.jsx";
+import PrivateRoute from "./Layout/SecurityLayout/PrivateRoute/PrivateRoute.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,14 @@ const router = createBrowserRouter([
       {
         path: "/regestation",
         element: <Regestation />,
+      },
+      {
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
     ],
   },
